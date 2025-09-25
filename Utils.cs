@@ -1,4 +1,6 @@
-﻿namespace VendingMachine
+﻿using System.Threading;
+
+namespace VendingMachine
 {
     /* 
      * Schreibt ein Programm, welches einen Getränkeautomaten nachbildet:
@@ -76,6 +78,16 @@
             Console.SetCursorPosition(top, left);
             Console.Write(write);
             Console.SetCursorPosition(b.Item1,b.Item2);
+        }
+
+        public bool PrintSlowly(string towrite, int letterdelay)
+        {
+            foreach (char letter in towrite)
+            {
+                Console.Write(letter);
+                Thread.Sleep(letterdelay);
+            }
+            return true;
         }
 
 
