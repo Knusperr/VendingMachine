@@ -13,10 +13,41 @@
 
     internal class Utils
     {
-        public string forcedConflict()
+        private prices pr = new prices();
+
+        public float returnRest(float input, float price)
         {
-            string errorMerge = "";
-            return errorMerge:
+
+
         }
+
+        public bool enough(float price, float input)
+        {
+            if(price => input)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+       /* public Dictionary<string,float> ChooseItem(string item, int itemint = 0)
+        {
+            if(itemint == 0) //out of range by fedalt to not mess with the rest
+            {
+                itemint = 986;
+            }
+            for (int i = 0; i < pr._prices.Count; i++)
+            {
+                if(i == itemint)
+                {
+                    return pr._prices[i];
+                }
+            }
+
+
+        }*/
     }
 }
