@@ -46,5 +46,31 @@
             }
             return 0;
         }
+
+        public bool CheckifValidProduct(string product)
+        {
+            if (pr._prices.ContainsKey(product))
+            {
+                return true;
+            }
+            else { return false; }
+        }
+
+        public string Productbyint(int input)
+        {
+            int i = 0;
+            foreach (string item in pr._prices.Keys)
+            {
+                if(i == input)
+                {
+                    return item;
+                }
+                i++;
+            }
+            return "";
+
+        }
+
+
     }
 }
