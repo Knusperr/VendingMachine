@@ -13,6 +13,10 @@
 
     internal class Utils
     {
-
+        public string forcedConflict()
+        {
+            string errorMerge = "";
+            return errorMerge:
+        }
     }
 }
