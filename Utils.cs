@@ -68,7 +68,14 @@
                 i++;
             }
             return "";
+        }
 
+        public void replaceLine(int top, int left,string write)
+        {
+            (int,int) b =Console.GetCursorPosition(); 
+            Console.SetCursorPosition(top, left);
+            Console.Write(write);
+            Console.SetCursorPosition(b.Item1,b.Item2);
         }
 
 
