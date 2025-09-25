@@ -1,4 +1,6 @@
-﻿namespace VendingMachine
+﻿using System.Threading;
+
+namespace VendingMachine
 {
     /* 
      * Schreibt ein Programm, welches einen Getränkeautomaten nachbildet:
@@ -17,8 +19,14 @@
 
         public float returnRest(float input, float price)
         {
-            return 0;
-
+            if (enough(price, input))
+            {
+                return Math.Abs(input -price);
+            }
+            else
+            {
+                return 0f;
+            }
         }
 
         public bool enough(float price, float input)
@@ -31,23 +39,57 @@
             {
                 return false;
             }
-
         }
-       /* public Dictionary<string,float> ChooseItem(string item, int itemint = 0)
+       public float GetPrice(string item)
         {
-            if(itemint == 0) //out of range by fedalt to not mess with the rest
+            if (pr._prices.ContainsKey(item))
             {
-                itemint = 986;
+                return pr._prices[item];
             }
-            for (int i = 0; i < pr._prices.Count; i++)
+            return 0;
+        }
+
+        public bool CheckifValidProduct(string product)
+        {
+            if (pr._prices.ContainsKey(product))
             {
-                if(i == itemint)
+                return true;
+            }
+            else { return false; }
+        }
+
+        public string Productbyint(int input)
+        {
+            int i = 0;
+            foreach (string item in pr._prices.Keys)
+            {
+                if(i == input)
                 {
-                    return pr._prices[i];
+                    return item;
                 }
+                i++;
             }
+            return "";
+        }
+
+        public void replaceLine(int top, int left,string write)
+        {
+            (int,int) b =Console.GetCursorPosition(); 
+            Console.SetCursorPosition(top, left);
+            Console.Write(write);
+            Console.SetCursorPosition(b.Item1,b.Item2);
+        }
+
+        public bool PrintSlowly(string towrite, int letterdelay)
+        {
+            foreach (char letter in towrite)
+            {
+                Console.Write(letter);
+                Thread.Sleep(letterdelay);
+            }
+            return true;
+        }
 
 
-        }*/
     }
 }
