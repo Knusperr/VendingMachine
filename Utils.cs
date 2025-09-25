@@ -17,13 +17,19 @@
 
         public float returnRest(float input, float price)
         {
-
-
+            if (enough(price, input))
+            {
+                return Math.Abs(input -price);
+            }
+            else
+            {
+                return 0f;
+            }
         }
 
         public bool enough(float price, float input)
         {
-            if(price => input)
+            if(price >= input)
             {
                 return true;
             }
@@ -31,23 +37,14 @@
             {
                 return false;
             }
-
         }
-       /* public Dictionary<string,float> ChooseItem(string item, int itemint = 0)
+       public float GetPrice(string item)
         {
-            if(itemint == 0) //out of range by fedalt to not mess with the rest
+            if (pr._prices.ContainsKey(item))
             {
-                itemint = 986;
+                return pr._prices[item];
             }
-            for (int i = 0; i < pr._prices.Count; i++)
-            {
-                if(i == itemint)
-                {
-                    return pr._prices[i];
-                }
-            }
-
-
-        }*/
+            return 0;
+        }
     }
 }
