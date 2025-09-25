@@ -17,13 +17,13 @@
 
         public float returnRest(float input, float price)
         {
-
+            return 0;
 
         }
 
         public bool enough(float price, float input)
         {
-            if(price => input)
+            if(price >= input)
             {
                 return true;
             }

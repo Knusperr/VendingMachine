@@ -16,6 +16,8 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, Vending Machine!");
+            Automat automat = new();
+            automat.DisplayDrinks();
         }
     }
 }
